@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Next.js / Expo / React Native
+.expo/
+.next/
+out/
+build/
+dist/
+
+# Environment Variables
+.env
+.env.*
+!.env.example
+
+# Infra
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# Testing
+coverage/
+
+# OS / Editor
+.DS_Store
+.vscode/
+*.log

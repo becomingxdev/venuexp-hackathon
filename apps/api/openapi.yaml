@@ -1,0 +1,22 @@
+openapi: 3.0.0
+info:
+  title: VenueXP API
+  version: 1.0.0
+  description: VenueXP Backend API for Smart Sporting Venue Experience
+paths:
+  /health:
+    get:
+      summary: Health check endpoint
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  timestamp:
+                    type: string
+                  
