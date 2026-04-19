@@ -3,8 +3,7 @@ import styles from '../Dashboard.module.css';
 import { CrowdState, WS_EVENTS } from '@venuexp/shared';
 import { io } from 'socket.io-client';
 
-const socket = io('http://localhost:3000');
-
+const socket = io(import.meta.env.VITE_API_URL);
 const ZONES = [
   { id: 'zone-north', name: 'North Stand Concourse' },
   { id: 'zone-south', name: 'South Stand Concourse' },

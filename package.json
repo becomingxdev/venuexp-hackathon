@@ -9,7 +9,8 @@
     "test:coverage": "turbo run test -- --passWithNoTests --coverage",
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "prepare": "husky install"
+    "prepare": "husky install || true",
+    "start": "pnpm --filter api start"
   },
   "packageManager": "pnpm@9.0.0",
   "devDependencies": {

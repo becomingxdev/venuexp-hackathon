@@ -9,9 +9,16 @@ const App: React.FC = () => {
   return (
     <div className={styles.dashboard}>
       <header className={styles.header}>
-        <div className={styles.title}>VenueXP — Operations Dashboard</div>
-        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-          <div style={{ fontSize: '0.8rem', opacity: 0.5 }}>Event: IPL 2026 Finals</div>
+        <div style={{ flex: 1 }}>
+          <div className={styles.title} style={{ fontSize: '1.5rem', fontWeight: 800, color: '#10b981' }}>VenueXP</div>
+          <div style={{ fontSize: '0.9rem', opacity: 0.8, marginBottom: '0.5rem' }}>Smart Sporting Venue Experience Platform</div>
+          <div style={{ display: 'flex', gap: '1rem', fontSize: '0.8rem', opacity: 0.7 }}>
+             <span style={{ background: '#1e293b', padding: '2px 8px', borderRadius: '4px' }}>📡 Real-time crowd intelligence</span>
+             <span style={{ background: '#1e293b', padding: '2px 8px', borderRadius: '4px' }}>⏱️ Wait time reduction</span>
+             <span style={{ background: '#1e293b', padding: '2px 8px', borderRadius: '4px' }}>☁️ Google Cloud + Firebase powered</span>
+          </div>
+        </div>
+        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', alignSelf: 'flex-start' }}>
           <div style={{ background: '#ef4444', height: 8, width: 8, borderRadius: '50%' }} />
           <span style={{ fontSize: '0.8rem', fontWeight: 600 }}>LIVE</span>
         </div>

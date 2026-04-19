@@ -61,9 +61,24 @@ const { getGates } = initGateWaitService(io);
 const { getConcessions } = initConcessionWaitService(io);
 const { handleConnection: handleCrowdConnection } = initCrowdStateService(io);
 
-// ── Public routes ─────────────────────────────────────────────────────
+app.get('/', (_req, res) => {
+  res.json({
+    name: "VenueXP API",
+    status: "live",
+    version: "1.0.0",
+    project: "Smart Sporting Venue Experience Platform",
+    endpoints: [
+      "/health",
+      "/api/gates",
+      "/api/concessions",
+      "/api/crowd",
+      "/socket.io"
+    ]
+  });
+});
+
 app.get('/health', (_req, res) => {
-  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+  res.json({ status: 'ok', uptime: process.uptime() });
 });
 
 // ── Protected routes (require valid Firebase token) ───────────────────
@@ -88,8 +103,9 @@ io.on('connection', (socket) => {
 });
 
 // ── Start ─────────────────────────────────────────────────────────────
-const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
+console.log("Booting API...");
+const PORT = Number(process.env.PORT) || 8080;
+server.listen(PORT, "0.0.0.0", () => {
+  console.log("Listening on", PORT);
   logger.info(`VenueXP API running on port ${PORT}`);
 });
-
