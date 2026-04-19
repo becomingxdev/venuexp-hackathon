@@ -60,8 +60,9 @@ export const useAuthStore = create<AuthState>((set) => ({
     try {
       set({ loading: true, error: null });
       await signInAnonymously(auth);
-    } catch (err: any) {
-      set({ loading: false, error: err.message });
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'Unknown error';
+      set({ loading: false, error: message });
     }
   },
 
@@ -69,8 +70,9 @@ export const useAuthStore = create<AuthState>((set) => ({
     try {
       await fbSignOut(auth);
       set({ user: null, token: null });
-    } catch (err: any) {
-      set({ error: err.message });
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'Unknown error';
+      set({ error: message });
     }
   },
 }));
