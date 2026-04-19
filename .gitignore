@@ -25,3 +25,10 @@ coverage/
 .DS_Store
 .vscode/
 *.log
+
+.turbo/
+.firebase/
+dist/
+coverage/
+node_modules/
+.env*
